@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-
 import { User } from '../../providers';
 import { MainPage } from '../';
+import { SignupPage } from '../signup/signup';
+import { BuildingPage } from '../building/building';
+
 
 @IonicPage()
 @Component({
@@ -46,5 +48,12 @@ export class LoginPage {
       });
       toast.present();
     });
+  }
+
+  goSignupPage() {
+    this.navCtrl.setRoot(SignupPage);
+  }
+  goBuildingPage() {
+    this.navCtrl.setRoot(BuildingPage);
   }
 }

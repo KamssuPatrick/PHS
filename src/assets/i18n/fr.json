@@ -11,11 +11,11 @@
 
   "MAP_TITLE": "Carte",
 
-  "TUTORIAL_SLIDE1_TITLE": "Bienvenue dans le kit de démarrage Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Ionic Super Starter</b> est un kit complet pour démarrer sur Ionic. Il repose sur les meilleures pratiques et implémente de nombreux types de pages.",
+  "TUTORIAL_SLIDE1_TITLE": "Bienvenue dans l'application QuickJobs",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>QuickJobs</b> est l'application qui vous met en relation avec des professionnels pouvant repondre à vos besoins et resoudre vos soucis techniques",
 
-  "TUTORIAL_SLIDE2_TITLE": "Comment utiliser le Super Starter",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Assemblez les types de pages désirés et supprimez les autres. Le kit inclut plusieurs mises en page courantes d’applications mobiles, comme les pages de connexion et d’inscription, les onglets et cette page de tutoriel.",
+  "TUTORIAL_SLIDE2_TITLE": "Comment ça marche?",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "<b>Vous avez un problème?</b> Téléchargez l'application QuickJobs, tapez sur la barre de recherche le corps de métier solicité(ex: Menusier) puis sélectionnez sur la liste des resultats le profil qui correspond le mieux au besoin, Décrivez ensuite votre problème et nous nous chargeons du reste ",
 
   "TUTORIAL_SLIDE3_TITLE": "Pour commencer",
   "TUTORIAL_SLIDE3_DESCRIPTION": "Si vous avez besoin d’aide, consultez le README du Super Starter pour un tutoriel complet.",
