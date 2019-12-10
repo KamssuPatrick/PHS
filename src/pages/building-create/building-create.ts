@@ -3,12 +3,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
 import { IonicPage, NavController, ViewController } from 'ionic-angular';
 
+/**
+ * Generated class for the BuildingCreatePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
 @IonicPage()
 @Component({
-  selector: 'page-item-create',
-  templateUrl: 'item-create.html'
+  selector: 'page-building-create',
+  templateUrl: 'building-create.html',
 })
-export class ItemCreatePage {
+export class BuildingCreatePage {
   @ViewChild('fileInput') fileInput;
 
   isReadyToSave: boolean;
@@ -18,20 +25,24 @@ export class ItemCreatePage {
   form: FormGroup;
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
+  
     this.form = formBuilder.group({
       profilePic: [''],
       name: ['', Validators.required],
-      about: ['']
+      about: [''],
+      nbTenants:[]
     });
 
     // Watch the form for changes, and
     this.form.valueChanges.subscribe((v) => {
       this.isReadyToSave = this.form.valid;
     });
+
   }
 
-  ionViewDidLoad() {
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad BuildingCreatePage');
   }
 
   getPicture() {
@@ -80,4 +91,5 @@ export class ItemCreatePage {
     if (!this.form.valid) { return; }
     this.viewCtrl.dismiss(this.form.value);
   }
+
 }

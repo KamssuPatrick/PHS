@@ -13,6 +13,8 @@ import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
 import { BuildingPage } from '../pages/building/building';
+import { SignupPage } from '../pages/signup/signup';
+import { Buildings } from '../mocks/providers/buildings';
 
 
 // The translate loader needs to know where to load i18n files
@@ -39,7 +41,8 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
-    BuildingPage
+    BuildingPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -57,11 +60,13 @@ export function provideSettings(storage: Storage) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    BuildingPage
+    BuildingPage,
+    SignupPage
   ],
   providers: [
     Api,
     Items,
+    Buildings,
     User,
     Camera,
     SplashScreen,

@@ -1,5 +1,5 @@
 <ion-header>
-
+  
   <ion-navbar>
     <ion-title>{{ item.name }}</ion-title>
   </ion-navbar>
@@ -7,12 +7,34 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="backg" >
   <div class="item-profile" text-center #profilePic [style.background-image]="'url(' + item.profilePic + ')'">
   </div>
 
-  <div class="item-detail" padding>
+  <!--<div class="item-detail" padding>
     <h2>{{item.name}}</h2>
     <p>{{item.about}}</p>
-  </div>
+  </div><br/>-->
+  
+  <ion-list class="it" padding>
+    <ion-item>
+      <ion-label class="green"><span class="space">Statu de paiement :</span> PAYE </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span class="space">Montant :</span> 600.000 XAF</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span class="space">Date paiement :</span> 11 XAF</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span class="space">Reste à payer:</span> 00 XAF</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span class="space">Avance : </span>00 XAF</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><span class="space">Aéré :</span> 00 XAF</ion-label>
+    </ion-item>
+  </ion-list>
+  
 </ion-content>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController, NavController } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, NavParams } from 'ionic-angular';
 
 import { Item } from '../../models/item';
 import { Items } from '../../providers';
+import { Buildings } from '../../providers';
 
 @IonicPage()
 @Component({
@@ -11,9 +12,12 @@ import { Items } from '../../providers';
 })
 export class ListMasterPage {
   currentItems: Item[];
+  build: any;
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController, buildings: Buildings, navParams: NavParams) {
+    this.build = navParams.get('build') || buildings.defaultBuild;
     this.currentItems = this.items.query();
+    
   }
 
   /**
@@ -27,7 +31,7 @@ export class ListMasterPage {
    * modal and then adds the new item to our data source if the user created one.
    */
   addItem() {
-    let addModal = this.modalCtrl.create('ItemCreatePage');
+    let addModal = this.modalCtrl.create('TenantCreatePage');
     addModal.onDidDismiss(item => {
       if (item) {
         this.items.add(item);

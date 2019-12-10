@@ -25,26 +25,26 @@
   <!--list section-->
   <div class="location-list">
       <!--location item section-->
-      <div class="location-item" (click)="goTenantsPage()">
-          <div class="location-img" style="background-image:url('../../assets/imgs/location_feed_01.png')">
+      <div class="location-item" *ngFor="let build of currentBuildings">
+          <div class="location-img" (click)="openBuilding(build)" [style.background-image]="'url(' + build.profilePic + ')'">
             
           </div>
           <div class="location-content row">
               <div class="col-90">
                   <h1>
-                      Stone Garden
+                    {{build.name}}
                   </h1>
 
                   <p>
-                      <i class="fa fa-flag"></i> Bonandjo, Douala
+                      <i class="fa fa-flag"></i>  {{build.about}}
                   </p>
               </div>
-              <ion-badge item-end class="nbTenants">6 Tenants</ion-badge>
+              <ion-badge item-end class="nbTenants">{{build.nbTenants}} Tenants</ion-badge>
               
           </div>
       </div><!--end location item section-->
 
-      <!--location item section-->
+      <!--location item section
       <div class="location-item">
           <div class="location-img" style="background-image:url('../assets/imgs/location_feed_02.png')">
 
@@ -61,9 +61,7 @@
               </div>
               
           </div>
-      </div><!--end location item section-->
-
-      <!--location item section-->
+      </div>
       <div class="location-item">
           <div class="location-img" style="background-image:url('../assets/imgs/location_feed_03.png')">
 
@@ -80,9 +78,7 @@
               </div>
               
           </div>
-      </div><!--end location item section-->
-
-      <!--location item section-->
+      </div>
       <div class="location-item">
           <div class="location-img" style="background-image:url('../assets/imgs/location_feed_04.png')">
 
@@ -99,9 +95,7 @@
               </div>
               
           </div>
-      </div><!--end location item section-->
-
-      <!--location item section-->
+      </div>
       <div class="location-item">
           <div class="location-img" style="background-image:url('../assets/imgs/location_feed_05.png')">
 
@@ -118,11 +112,11 @@
               </div>
              
           </div>
-      </div><!--end location item section-->
+      </div>-->
 
   </div><!--end list section-->
   <ion-fab right bottom>
-    <button ion-fab><ion-icon name="add"></ion-icon></button>
+    <button ion-fab (click)="addBuilding()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
 </ion-content>

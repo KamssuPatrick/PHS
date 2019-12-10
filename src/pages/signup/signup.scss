@@ -1,3 +1,78 @@
 page-signup {
+    .background{
+        background-image: url("../../assets/imgs/briah.png");
+        background-position: center;
+        
+    }
 
+    .scroll-content {
+        align-content: center;
+        margin-top: 45px;
+        justify-content: center;
+        text-align: center;
+        
+    }
+    
+    ion-card.card{
+        box-shadow: none;
+        background: none;
+        border-radius: 5px;
+        
+        
+    }
+    .ligne{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.71);
+    }
+    button.arrondi{
+        border-radius: 20px!important ;
+    }
+    a,p,
+    ion-card-header.card-header{
+        color: #fff!important;
+    }
+    ion-card-header.card-header{
+        font-size: 25px;
+    }
+    .text-input{
+        color: #fff;
+    }
+    input::-moz-placeholder{
+        color: #fff!important;
+    }
+    input:-moz-placeholder{
+        color: #fff!important;
+    }
+    *:-moz-placeholder{
+        color: #fff!important;
+    }
+    *:-ms-input-placeholder{
+        color: #fff!important;
+    }
+    *::-webkit-input-placeholder{
+        color: #fff!important;
+    }
+
+    .item{
+        margin-bottom: 10px;
+        background: none;
+        
+    }
+    .icon{
+        padding-right: 10px;
+    }
+    .bottom{
+        position: absolute;
+        bottom: 0;
+    }
+
+    .rond{
+        border-radius: 100%;
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        font-size: 28px;
+        padding-right:20px ;
+    }
 }

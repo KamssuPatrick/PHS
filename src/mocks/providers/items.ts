@@ -11,6 +11,7 @@ export class Items {
     "profilePic": "assets/img/speakers/bear.jpg",
     "about": "Burt is a Bear.",
   };
+  
 
 
   constructor() {

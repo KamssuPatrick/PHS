@@ -1,12 +1,12 @@
-<ion-header>
+<!--<ion-header>
 
   <ion-navbar>
     <ion-title>{{ 'SIGNUP_TITLE' | translate }}</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header>-->
 
-
+<!--
 <ion-content>
   <form (submit)="doSignup()">
     <ion-list>
@@ -20,7 +20,7 @@
         <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
         <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
-
+  -->
       <!--
       Want to add a Username? Here you go:
 
@@ -29,7 +29,7 @@
         <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
       </ion-item>
       -->
-
+<!--
       <ion-item>
         <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
@@ -41,4 +41,45 @@
 
     </ion-list>
   </form>
+</ion-content>
+-->
+<ion-content class="background">
+  <ion-card>
+      <ion-card-header>
+        PHS Sign Up
+      </ion-card-header>
+      <ion-card-content >
+          <ion-list>
+              <ion-item>
+                  <ion-label floating>{{ 'NAME' | translate }}</ion-label>
+                  <ion-input type="text" [(ngModel)]="account.name" name="name" class="ligne"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating>{{ 'EMAIL' | translate }}</ion-label>
+                  <ion-input type="text" [(ngModel)]="account.email" name="email" class="ligne"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label floating>{{ 'PASSWORD' | translate }}</ion-label>
+                  <ion-input type="password" [(ngModel)]="account.password" name="password" class="ligne"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Select your profile</ion-label>
+                <ion-select ([ngProfile])="gender">
+                  <ion-option value="o">Owner</ion-option>
+                  <ion-option value="T">Tenants</ion-option>
+                  <ion-option value="C">Caretaker</ion-option>
+                  <ion-option value="P">Partner</ion-option>
+                </ion-select>
+              </ion-item>
+              
+              <button ion-button block outline class="arrondi" color="light" (click)="doSignup()">Sign Up</button>
+              
+            </ion-list>
+            <p> Or Sign Up with</p>
+            <button ion-button color="danger" class="rond"><ion-icon name="logo-googleplus"></ion-icon></button>
+            <button ion-button  class="rond"><ion-icon name="logo-facebook"></ion-icon></button>
+           
+      </ion-card-content>
+    </ion-card>
+
 </ion-content>
