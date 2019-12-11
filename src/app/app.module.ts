@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Camera } from '@ionic-native/camera';
+import { AngularFireModule } from 'angularfire2';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule, Storage } from '@ionic/storage';
@@ -9,6 +10,10 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import * as firebase from 'firebase/app';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
@@ -16,6 +21,18 @@ import { BuildingPage } from '../pages/building/building';
 import { SignupPage } from '../pages/signup/signup';
 import { Buildings } from '../mocks/providers/buildings';
 
+
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDsEctUgC5_DpvX4OfK25MYsE9HPecJGOg",
+  authDomain: "phs2019.firebaseapp.com",
+  databaseURL: "https://phs2019.firebaseio.com",
+  projectId: "phs2019",
+  storageBucket: "phs2019.appspot.com",
+  messagingSenderId: "35024273820",
+  appId: "1:35024273820:web:fa1b17d336a2ae2cb44859"
+};
+
+//firebase.initializeApp(FIREBASE_CONFIG);
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -54,6 +71,10 @@ export function provideSettings(storage: Storage) {
         deps: [HttpClient]
       }
     }),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -71,6 +92,7 @@ export function provideSettings(storage: Storage) {
     Camera,
     SplashScreen,
     StatusBar,
+    AngularFireAuth,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }
